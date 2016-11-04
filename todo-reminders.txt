@@ -1,1 +1,2 @@
 Visit: https://www.quicksprout.com/2012/09/20/how-to-make-your-site-insanely-fast/ and follow steps 
+w3school >>>>semantics structural tags/types/text? use strictly HTML5 format; headers, footers, SECTION etc.
