@@ -328,20 +328,30 @@ if ( typeof define === 'function' && define.amd ) {
 })( window );
 // JavaScript Document
 
-//Banner function to resize on scroll
-function init() {
-        window.addEventListener('scroll', function(e){
-            var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-                shrinkOn = 300,
-                header = document.querySelector("header");
-            if (distanceY > shrinkOn) {
-                classie.add(header,"smaller");
-            } else {
-                if (classie.has(header,"smaller")) {
-                    classie.remove(header,"smaller");
-                }
-            }
-        });
+
+
+
+
+
+//CODE TO CLOSE MODAL IF USER CLICKS OUTSIDE OR PRESSES ESC
+function modalClose() {
+    if (location.hash == '#openModal') {
+        location.hash = '';
     }
-    window.onload = init();
-//END BANNER FUNCTION----------------------------------------------------------------------
+}
+
+document.addEventListener('keyup', function(e) {
+    if (e.keyCode == 27) {
+        modalClose();
+    }
+});
+
+var modal = document.querySelector('#openModal');
+modal.addEventListener('click', function(e) {
+    modalClose();
+}, false);
+
+modal.children[0].addEventListener('click', function(e) {
+    e.stopPropagation();
+}, false);
+
