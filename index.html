@@ -17,7 +17,7 @@
     
     <script src="js/scripts.js"></script>
     
-    <!--THIS RESETS PAGE UNDER CERTAIN CIRMUNSTANCES, JUST IGNORE-->
+    <!--THIS CONTROLS HEADER SHRINK BEHAVIOR, JUST IGNORE-->
     <script>
 function init() {    
         window.addEventListener('scroll', function(e){
@@ -38,24 +38,32 @@ function init() {
 
   </head>
 
-	<div id="openModal" class="modalDialog">
-    <div>	<a href="#close" title="Close" class="close">&times;</a>
-	<div class="modal-header">
-	<div class="modal-content" id=modal-header>
-		<h2>Sign In</h2>
-		</div>
-	</div>
+    <!--MODALS BEGIN HERE------------------>
+
+    <div id="new-post-modal" class="modalDialog">
+    <div>   <a href="#close" title="Close" class="close">&times;</a>
+    <div class="modal-header">
+    <div class="modal-content" id=modal-header>
+        <h2>New Post</h2>
+        </div>
+    </div>
     <div class="modal-body">
        <div class="modal-content">
-        <p>This is a sample modal box that can be created using the powers of CSS3.</p>
-        <p>You could do a lot of things here like have a pop-up ad that shows when your website loads, or create a login/register form for users.</p>
-    	</div>
-		</div>
+        <p>You don't have to, but if you sign in before making a post, you can get custom reminders, alerts, etc.</p>
+        <div class="modal-button">
+        <a href="#sign-in-modal">
+            <button value="Sign in before posting" id="sign-in-button">Sign In</button>
+        </a>
+        <a href="#">
+        <button value="Just make a quick post without signing in" id="quick-post-button">Quick Post</button>
+        </div>
+        </div>
+    </div>
     <div class="modal-footer"> 
-		<div class="modal-content">
-			<a href="http://www.frostburg.edu/computing/get-connected/password-management/">Forgot your password or having login issues?</a>
-		</div>
-    	
+        <div class="modal-content">
+            <a>Make sure to include enough details in your post!</a>
+        </div>
+        
     </div>
      
 
@@ -64,19 +72,64 @@ function init() {
 
     </div>
 </div>
+     
+     <!----------SEPERATOR-------------->
+
+    <div id="sign-in-modal" class="modalDialog">
+    <div>   <a href="#close" title="Close" class="close">&times;</a>
+    <div class="modal-header">
+    <div class="modal-content" id=modal-header>
+        <h2>Sign In</h2>
+        </div>
+    </div>
+    <div class="modal-body">
+       <div class="modal-content">
+          <div class="form">
+            <form class="login-form">
+              <input id="username" type="text" placeholder="FSU email"/>
+              <input id="password" type="password" placeholder="password"/>
+              <button id="login-button">login</button>
+            </form>
+          </div>
+          <a href="#quick-post-form">
+                <p>OR Never mind, just make a quick post instead?</p>
+            </a>
+        </div>
+
+        </div>
+    <div class="modal-footer"> 
+        <div class="modal-content">
+            <a href="http://www.frostburg.edu/computing/get-connected/password-management/">Forgot your password or having login issues?</a>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+
+
+<!--MODALS END HERE------------------>
+  
+
+
+ 
 <body>
  <script src="js/scripts.js"></script>
   <div id="wrapper">
 
 	<header>
 		<div class="container clearfix">
-			<h1 id="logo">
-				FSU Lost and Found
-			</h1>
+			<a href="#content">
+                <div>
+                    <h1 id="logo">
+        				FSU Lost and Found
+        			</h1>
+                </div>
+            </a>
 			<nav>
-				<a href="">New Post</a>
-				<a href="">Browse</a>
-				<a href="#openModal">Sign In</a>
+				<a href="#new-post-modal">New Post</a>
+				<a href="javascript:void(0)" onclick="openSection(event, browse)">Browse</a>
+				<a href="#sign-in-modal">Sign In</a>
 			</nav>
 		</div>
 	</header>
@@ -85,7 +138,7 @@ function init() {
 	
 	
 	<div id="main">
-    <div id="content">
+    <div id="content" class="content">
         <section class="no-color">
            <div class="unskew-text">
             <div class="container">
@@ -139,14 +192,21 @@ function init() {
 			</div>
         </section>
     </div>
-</div><!-- #main -->
 
+<!-- BROWSE BEGINS HERE-->
 
+    <div id="browse">
+        <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+        <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+        <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
+        <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
 
+    </div>
+</div><!-- END #main -->
 
 
 <footer>
-<div id="info-bar">
+<div id="info-bar" class="container">
     <div class="container clearfix">
         <span class="all-tutorials"><a>&#9888; Bring attention to an issue &#9888;</a></span>
         <span class="back-to-tutorial"><a href="#"> &uarr; back to the top &uarr;</a></span>

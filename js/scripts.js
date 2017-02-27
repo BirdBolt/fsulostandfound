@@ -335,7 +335,7 @@ if ( typeof define === 'function' && define.amd ) {
 
 //CODE TO CLOSE MODAL IF USER CLICKS OUTSIDE OR PRESSES ESC
 function modalClose() {
-    if (location.hash == '#openModal') {
+    if (location.hash == '#new-post-modal' || location.hash == '#sign-in-modal') {
         location.hash = '';
     }
 }
@@ -346,12 +346,49 @@ document.addEventListener('keyup', function(e) {
     }
 });
 
-var modal = document.querySelector('#openModal');
-modal.addEventListener('click', function(e) {
+var modal1 = document.querySelector('#new-post-modal');
+
+modal1.addEventListener('click', function(e) {
     modalClose();
 }, false);
 
-modal.children[0].addEventListener('click', function(e) {
+
+modal1.children[0].addEventListener('click', function(e) {
     e.stopPropagation();
 }, false);
 
+var modal2 = document.querySelector('#sign-in-modal');
+
+modal2.addEventListener('click', function(e) {
+    modalClose();
+}, false);
+
+
+modal2.children[0].addEventListener('click', function(e) {
+    e.stopPropagation();
+}, false);
+
+
+
+
+//HANDLE SECTION SWITCHING
+function openSection(evt, sectionName) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="content" and hide them
+    tabcontent = document.getElementsByClassName("content");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="content" and remove the class "active"
+    tablinks = document.getElementsByClassName("content");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the link that opened the tab
+    document.getElementById(sectionName).style.display = "block";
+    evt.currentTarget.className += " active";
+}
