@@ -43,6 +43,10 @@ table {
 a img {
   border: none; }
 
+img {
+  max-width: 100%
+}
+
 /* =Scss Variables
 -------------------------------------------------------------- */
 /* =Global
@@ -72,6 +76,29 @@ a {
 
 a:hover {
   color: #0793e2; }
+
+/*recents*/
+.img-container {
+    text-align: justify;
+}
+.img-container > div {
+    display: inline-block;
+    vertical-align: top;
+}
+.img-container:after {
+    content: "";
+    width: 100%;
+    display: inline-block;
+}
+
+
+
+
+
+
+
+/*LIGHTBOX*/
+
 
 
 /* Modal */
@@ -125,7 +152,7 @@ a:hover {
 .modalDialog > div {
     max-width: 95%;
     width:500px;
-
+    max-height: inherit;
     position: relative;
     margin: 10% auto;
   
