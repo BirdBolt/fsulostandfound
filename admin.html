@@ -3,19 +3,20 @@
 <html lang="en">
 
   <head>
-    <title>FSU Lost and Found | Admin Panel</title>
-    <link rel="stylesheet" href="css/adminStyles.css">
+    <title>Frostburg State University | Lost and Found</title>
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="shortcut icon" href="favicon.ico">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-     <script src="js/adminScripts.js"></script>
-    
 
-
-    <meta name="description" content="Aministrator Panal Database of lost property at Frostburg State University">
+    <meta charset="UTF-8">
+    <meta name="description" content="Database for lost property at Frostburg State University">
     <meta name="keywords" content="Lost and Found, Frostburg State University, missing/lost property">
     <meta name="author" content="FSU Research">
-
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="js/scripts.js"></script>
+    
         <!--THIS CONTROLS HEADER SHRINK BEHAVIOR, JUST IGNORE-->
     <script>
 function init() {    
@@ -37,6 +38,106 @@ function init() {
 
   </head>
 
+    <!--MODALS BEGIN HERE------------------>
+
+    <div id="new-post-modal" class="modalDialog">
+    <div>   <a href="#close" title="Close" class="close">&times;</a>
+    <div class="modal-header">
+    <div class="modal-content" id=modal-header>
+        <h2>New Post</h2>
+        </div>
+    </div>
+    <div class="modal-body">
+       <div class="modal-content">
+        <p>You don't have to, but if you sign in before making a post, you can get custom reminders, alerts, etc.</p>
+        <div class="modal-button">
+        <a href="#sign-in-modal">
+            <button value="Sign in before posting" id="sign-in-button">Sign In</button>
+        </a>
+        <a href="#">
+        <button value="Just make a quick post without signing in" id="quick-post-button">Quick Post</button>
+        </div>
+        </div>
+    </div>
+    <div class="modal-footer"> 
+        <div class="modal-content">
+            <a>Make sure to include enough details in your post!</a>
+        </div>
+        
+    </div>
+     
+
+    
+
+
+    </div>
+</div>
+     
+     <!----------SEPERATOR-------------->
+
+    <div id="sign-in-modal" class="modalDialog">
+    <div>   <a href="#close" title="Close" class="close">&times;</a>
+    <div class="modal-header">
+    <div class="modal-content" id=modal-header>
+        <h2>Sign In</h2>
+        </div>
+    </div>
+    <div class="modal-body">
+       <div class="modal-content">
+          <div class="form">
+            <form class="login-form">
+              <input id="username" type="text" placeholder="FSU email"/>
+              <input id="password" type="password" placeholder="password"/>
+              <button id="login-button">login</button>
+            </form>
+          </div>
+          <a href="#quick-post-form">
+                <p>OR Never mind, just make a quick post instead?</p>
+            </a>
+        </div>
+
+        </div>
+    <div class="modal-footer"> 
+        <div class="modal-content">
+            <a href="http://www.frostburg.edu/computing/get-connected/password-management/">Forgot your password or having login issues?</a>
+        </div>
+        
+    </div>
+    </div>
+</div>
+
+     <!----------SEPERATOR-------------->
+
+    <div id="submit-issue-modal" class="modalDialog">
+    <div>   <a href="#close" title="Close" class="close">&times;</a>
+    <div class="modal-header">
+    <div class="modal-content" id=modal-header>
+        <h2>Bring Attention To An Issue</h2>
+        </div>
+    </div>
+    <div class="modal-body">
+       <div class="modal-content">
+          <div class="form">
+            form for details and stuff here. 
+        </div>
+
+        </div>
+    <div class="modal-footer"> 
+        <div class="modal-content">
+            <a>Thank you for alerting us to this; Please be aware that by submitting this, information about your device such as browser type and version, and operating system type will be colected in case this is a technical issue. No personally identifiable information such as name, etc. will be collected.</a>
+        </div>
+        
+    </div>
+    </div>
+</div>
+</div>
+
+
+<!--MODALS END HERE------------------>
+  
+
+
+ 
 <body>
  <script src="js/scripts.js"></script>
   <div id="wrapper">
@@ -62,25 +163,11 @@ function init() {
   
   
   <div id="main" class="homepage-section tab">
-
-
-   <ul id="tabs-swipe-demo" class="tabs">
-    <li class="tab col s3"><a href="#test-swipe-1">Test 1</a></li>
-    <li class="tab col s3"><a class="active" href="#test-swipe-2">Test 2</a></li>
-    <li class="tab col s3"><a href="#test-swipe-3">Test 3</a></li>
-  </ul>
-  <div id="test-swipe-1" class="col s12 blue">Test 1</div>
-  <div id="test-swipe-2" class="col s12 red">Test 2</div>
-  <div id="test-swipe-3" class="col s12 green">Test 3</div>
-
-
-
-  
     <div id="content" class="content">
         <section class="no-color">
            <div class="unskew-text">
             <div class="container">
-                <h1>CAMPUS POLICE</h1>
+                <h1>CONTENT MANGEMENT</h1>
                 <p>Latest submissions for items transferred to or found by campus police</p>
                 <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
                 <div class="img-container">
@@ -94,7 +181,7 @@ function init() {
         <section class="color">
            <div class="unskew-text">
             <div class="container">
-                <h1>CENTER FOR COMMUNICATIONS AND INFORMATION TECHNOLOGY</h1>
+                <h1>ALERTS & NOTIFICATIONS</h1>
                 <p>Most Recent Items found at or reported missing at the Gira Center</p>
                 <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
                 <div class="img-container">
@@ -108,7 +195,7 @@ function init() {
         <section class="no-color" classs="no-color">
            <div class=unskew-text>
             <div class="container">
-                <h1>LANE CENTER</h1>
+                <h1>UNLABELED</h1>
                 <p>Most recent items found at or reported missing at Lane Center</p>
                 <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
                 <div class="img-container">
@@ -119,42 +206,12 @@ function init() {
             </div>
     </div>
         </section>
-        <section class="color">
-           <div class="unskew-text">
-            <div class="container">
-                <h1>LIBRARY</h1>
-                <p>Most recent items found at or reported missing at the Library</p>
-                <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-                <div class="img-container">
-                    <div><img src="http://placehold.it/350x150"></div>
-                    <div><img src="http://placehold.it/350x150"></div>
-                    <div><a href="#" >See more</a></div>
-                </div>
-            </div>
-      </div>
-        </section>
-        <section class="no-color">
-           <div class="unskew-text">
-            <div class="container">
-                <h1>OUTDOORS</h1>
-                <p>Most recent items found or reported missing outside campus buildings.</p>
-                <p>Lorem ipsum dolor sit amet, etiam lorem adipiscing elit. Cras turpis ante, nullam sit amet turpis non, sollicitudin posuere urna. Mauris id tellus arcu. Nunc vehicula id nulla dignissim dapibus. Nullam ultrices, neque et faucibus viverra, ex nulla cursus.</p>
-                <div class="img-container">
-                    <div><img src="http://placehold.it/350x150"></div>
-                    <div><img src="http://placehold.it/350x150"></div>
-                    <div><a href="#" >See more</a></div>
-                </div>
-            </div>
-      </div>
-        </section>
+
+        
     </div> <!--content ends here-->
 
 <!-- BROWSE BEGINS HERE-->
 
-<div id="browse-container" class="container browse-section tab">
-  <h3>London</h3>
-  <p>London is the capital city of England.</p>
-</div>
   
 </div><!-- END #main -->
 
