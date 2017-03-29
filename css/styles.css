@@ -19,7 +19,6 @@ body {
   line-height: 1; }
 
 h1, h2, h3, h4, h5, h6 {
-  text-align: center;
   clear: both;
   font-weight: normal; }
 
@@ -230,9 +229,7 @@ section {
   section.color {
     background-color: black;
     color: white; }
-p {
-  text-align: center;
-}
+
 
 /*skew non colored background sections' contents*/
 /*GUYS PLEASE DON'T MESS WITH THIS!!*/
