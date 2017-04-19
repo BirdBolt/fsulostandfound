@@ -77,6 +77,12 @@ a {
 a:hover {
   color: #0793e2; }
 
+
+.content {
+  text-align: center;
+}
+
+
 /*recents*/
 .img-container {
     text-align: justify;
@@ -102,6 +108,12 @@ a:hover {
 
 
 /* Modal */
+#browse-modal > div {
+    min-width: 95%;
+    max-height: 85%
+}
+
+
 .modal-body {
   position: relative;
   margin: 0, auto;
@@ -321,14 +333,14 @@ button:active {
     padding: 10px; }
     #info-bar a:hover {
       background-color: #0793e2; }
-  #info-bar span.all-tutorials,
-  #info-bar span.back-to-tutorial {
+  #info-bar span.bring-attention,
+  #info-bar span.back-to-top {
     display: block;
     width: 50%; }
-  #info-bar span.all-tutorials {
+  #info-bar span.bring-attention {
     float: left;
     text-align: left; }
-  #info-bar span.back-to-tutorial {
+  #info-bar span.back-to-top {
     float: right;
     text-align: right; }
 
@@ -381,7 +393,6 @@ header {
   header.smaller {
     height: 75px; }
     header.smaller h1#logo {
-      width: 50%;
       height: 75px;
       line-height: 75px;
       font-size: 30px; }
@@ -401,7 +412,7 @@ header {
 
 /* =Media Queries
 -------------------------------------------------------------- */
-@media all and (max-width: 660px) {
+@media all and (max-width: 1200px) {
   /* =Header
   -------------------------------------------------------------- */
   header h1#logo {
@@ -430,18 +441,53 @@ header {
       height: 35px; }
       header.smaller nav a {
         line-height: 35px; } }
-@media all and (max-width: 600px) {
+
+@media screen and (max-width: 620px){  
+header {
+  height: 150px;
+} 
+  header h1#logo{
+    font-size: 20px; 
+    min-height: 40px;
+  }
+       header.smaller {
+    height: 90px; }
+    header.smaller h1#logo {
+      text-overflow: initial;
+
+      max-height: 50px;
+
+      font-size: 20px; }
+    header.smaller nav a {
+      line-height: 45px; }
+}
+
+@media all and (max-width: 1000px) {
   .container {
     width: 100%; }
 
   #info-bar a {
     display: block; }
-  #info-bar span.all-tutorials,
-  #info-bar span.back-to-tutorial {
+  #info-bar span.bring-attention,
+  #info-bar span.back-to-top {
     width: 100%; }
-  #info-bar span.all-tutorials,
-  #info-bar span.back-to-tutorial {
+  #info-bar span.bring-attention,
+  #info-bar span.back-to-top {
     float: none;
     text-align: center; }
-  #info-bar span.all-tutorials {
-    border-bottom: solid 1px #0793e2; } }
+  #info-bar span.bring-attention {
+    /*border-bottom: solid 1px #0793e2; }  unsightly blue border*/ }
+
+@media all and (max-width: 500px){
+  .container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 0 20px; }
+
+  header.smaller nav a {
+    font-size: 13px; }
+.img-container {
+    text-align: center;
+}
+ 
+}
