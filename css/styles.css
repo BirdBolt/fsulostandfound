@@ -103,7 +103,50 @@ a:hover {
 
 
 
-/*LIGHTBOX*/
+/*LIGHTBOX, BROWSE IMAGES*/
+.rendered-images {
+  max-height: 400px;
+
+}
+
+.rendered-image-container {
+  position: relative;
+  width: 50%;
+ display: inline-block;
+   width: 150px;
+  height: 150px;
+
+}
+
+.rendered-image-backwall {
+  background-color: #000000;
+  margin: 10px;
+  display: inline-block;
+}
+.browse-image {
+  
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -113,10 +156,15 @@ a:hover {
     max-height: 85%
 }
 
+.rendered-images {
+
+}
 
 .modal-body {
   position: relative;
   margin: 0, auto;
+   overflow:auto;
+
 
 }
 .modal-content{
@@ -125,7 +173,8 @@ a:hover {
 	padding-top: 20px;
 	padding-bottom: 20px;
   text-align: center;
-
+  max-height: 100%;
+ 
 }
 
 .modal-footer{
@@ -227,7 +276,9 @@ a:hover {
 .container {
   width: 80%;
   margin: 0 auto;
-  padding: 0 30px; }
+  padding: 0 30px; 
+  max-width: 1440px;
+}
 
 section {
   padding: 60px 0; }
@@ -262,7 +313,7 @@ section {
     -o-transform: skewY(-3deg);
     transform: skewY(-3deg);
 }
-	
+
 	
 /* =Buttons
 ----------------------------------------------------------------*/

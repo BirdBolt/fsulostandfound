@@ -118,7 +118,10 @@ function init() {
     <div class="modal-body">
        <div class="modal-content">
           <div class="form">
-            form for details and stuff here. 
+            <form action="issue.php" method="post">
+                Details: <input type="text" name="name"><br>
+                <input type="submit">
+            </form> 
         </div>
 
         </div>
@@ -136,29 +139,42 @@ function init() {
 <!----------SEPERATOR-------------->
 
     <div id="browse-modal" class="modalDialog">
-    <div>   <a href="#close" title="Close" class="close">&times;</a>
+    <div id="modal-tripart-wrapper">   <a href="#close" title="Close" class="close">&times;</a>
     <div class="modal-header">
     <div class="modal-content" id=modal-header>
         <h2>Browse Listings</h2>
         </div>
     </div>
     <div class="modal-body">
-       <div class="modal-content">
-          <div class="">
+    <input type="text" id="myInput" onkeyup="searchFunction()" placeholder="Search for items..">
+      <div class="modal-content">
+          <div class="rendered-images">
           <?php
-            echo "<h2>PHP is Fun!</h2>";
-            echo "Hello world!<br>";
-            echo "I'm about to learn PHP!<br>";
-            echo "This ", "string ", "was ", "made ", "with multiple parameters.";
+            $dirname = "images/test images/";
+            $images = glob($dirname."*.jpg");
+
+            foreach($images as $image) {
+                echo '<div class = "rendered-image-backwall"><div class="rendered-image-container">
+                  <span class="image-center-vertical"></span><img class = "browse-image" src="'.$image.'" />
+                  </div>
+                </div>';
+
+
+
+
+              
+}
             ?>
         </div>
-
         </div>
+
+    
+    </div>
     <div class="modal-footer"> 
         <div class="modal-content">
+        Sort By ....?
         </div>
         
-    </div>
     </div>
     </div>
 </div>
